@@ -29,6 +29,151 @@
     <label for="currentChapter">Текущая глава:</label>
     <input type="number" id="currentChapter" value="22">
     <button onclick="updateGraph()">Обновить граф</button>
+
+
+
+	<label>
+      Фильтр
+	  
+
+	  <div>
+        <label>
+          <input type="checkbox" name="edgesFilter" value="all" checked />
+           Показать все связи
+        </label>
+      </div>
+
+
+
+	
+
+
+		<div>  <label>   <input type="checkbox" name="edgesFilter" value="nephew"  />
+		Is <span style="color: red">nephew</span> (племянник) of  </label>    
+
+
+		   <label>   <input type="checkbox" name="edgesFilter" value="aunt"  />
+		Is <span style="color: red">aunt</span> (тётя) of  </label>
+		   <label>   <input type="checkbox" name="edgesFilter" value="uncle"  />
+		Is <span style="color: red">uncle</span> (дядя) of  </label>   
+	
+	</div>
+
+
+		<div>  <label>   <input type="checkbox" name="edgesFilter" value="husband"  />
+		Is <span style="color: red">husband</span> of  </label> 
+		
+		<label>   <input type="checkbox" name="edgesFilter" value="wife"  />
+		Is <span style="color: red">wife</span> of  </label>    </div>
+
+
+
+		<div>  <label>   <input type="checkbox" name="edgesFilter" value="father"  />
+		Is <span style="color: red">father</span> of  </label>    
+
+	 	  <label> <input type="checkbox" name="edgesFilter" value="mother"  />
+		Is <span style="color: red">mother</span> of   </label>    
+
+		  <label>   <input type="checkbox" name="edgesFilter" value="son"  />
+		Is <span style="color: red">son</span> of   </label> 
+		
+		<label>   <input type="checkbox" name="edgesFilter" value="daughter"  />
+		Is <span style="color: red">daughter</span> of   </label>  </div>
+
+
+
+		<div>    <label>   <input type="checkbox" name="edgesFilter" value="sister"  />
+		Is <span style="color: red">sister</span> of  </label>    
+		
+	    <label>   <input type="checkbox" name="edgesFilter" value="brother"  />
+		Is <span style="color: red">brother</span> of  </label>   </div>
+		
+
+
+		
+		<div>    <label>   <input type="checkbox" name="edgesFilter" value="grandmother"  />
+		Is <span style="color: red">grandmother</span> of  </label>   
+		
+	    <label>   <input type="checkbox" name="edgesFilter" value="grandfather"  />
+		Is <span style="color: red">grandfather</span> of  </label>    
+		
+
+
+		   <label>   <input type="checkbox" name="edgesFilter" value="grandson"  />
+		Is <span style="color: red">grandson</span> of  </label>   
+
+		  <label>   <input type="checkbox" name="edgesFilter" value="granddaughter"  />
+		Is <span style="color: red">granddaughter</span> of  </label>   </div>
+
+
+
+
+		<div>    <label>   <input type="checkbox" name="edgesFilter" value="daughter-in-law"  />
+		Is <span style="color: red">daughter-in-law</span> of  </label>    
+		
+		    <label>   <input type="checkbox" name="edgesFilter" value="father-in-law"  />
+		Is <span style="color: red">father-in-law</span> of  </label>  
+		
+		    <label>   <input type="checkbox" name="edgesFilter" value="mother-in-law"  />
+		Is <span style="color: red">mother-in-law</span> of  </label> 
+		
+		<label>   <input type="checkbox" name="edgesFilter" value="sister-in-law"  />
+		Is <span style="color: red">sister-in-law</span> of  </label> 
+	
+	
+	</div>
+
+
+		
+ 
+
+
+		<div>  <label>  <input type="checkbox" name="edgesFilter" value="cousin"  />
+		Is <span style="color: green">cousin</span> of  </label>    </div>
+
+
+		<div>  <label>   <input type="checkbox" name="edgesFilter" value="maid"  />
+		Is <span style="color: blue">maid</span> of  </label>   
+
+		  <label>  <input type="checkbox" name="edgesFilter" value="master"  />
+		Is <span style="color: red">master</span> of  </label>  
+
+		  <label>   <input type="checkbox" name="edgesFilter" value="servant"  />
+		Is <span style="color: red">servant</span> of   </label>  </div>
+
+
+
+
+
+		<div>    <label>   <input type="checkbox" name="edgesFilter" value="friend"  />
+		Is <span style="color: red">friend</span> of   </label>    
+		 <label> <input type="checkbox" name="edgesFilter" value="student"  />
+		Is <span style="color: red">student</span> of   </label>
+		<label>   <input type="checkbox" name="edgesFilter" value="relative"  />
+		Is <span style="color: red">relative</span> of  </label>  
+	</div>
+
+	  
+	  
+	  <div>   <label> <input type="checkbox" name="edgesFilter" value="crush"  />
+		Is <span style="color: red">crush</span> of   </label>  
+		<label> <input type="checkbox" name="edgesFilter" value="lover"  />
+		Is <span style="color: red">lover</span> of   </label> 
+
+		<label> <input type="checkbox" name="edgesFilter" value="admirer"  />
+		Is <span style="color: red">admirer</span> of   </label> 
+
+	</div>
+
+	  
+ 
+
+	  
+
+
+	  <div>  <label>   <input type="checkbox" name="edgesFilter" value="other"  />
+           Показать все остальные  </label>  </div>  </label>
+
   </div>
   <div id="mynetwork"></div>
 
@@ -48,16 +193,79 @@ function preTitle(text) {
         return container;
       }
  
+ 
+	const edgesFilterValues = {
+		all: true,
+		other: false,
+		cousin: false,
+		nephew: false,
+		aunt: false,
+		uncle: false,
+		sister: false,
+		brother: false,
+		relative: false,
+		"daughter-in-law": false,
+		"father-in-law": false,
+		"mother-in-law": false,
+		"sister-in-law": false,
+		wife: false,
+		husband: false,
+		maid: false,
+		servant: false,
+		master: false,
+		son: false,
+		daughter: false,
+		admirer: false,
+		crush: false,
+		lover: false,
+		mother: false,
+		friend: false,
+		grandfather: false,
+		grandmother: false,
+		grandson: false,
+		granddaughter: false,
+		father: false,
+		student: false,
+	};
+
+	const edgesFilter = (edge) => {
+		if(edgesFilterValues["all"]){
+			return true;
+		}
+		if (typeof( edgesFilterValues[edge.label]) == "undefined" ){
+			if(edgesFilterValues["other"]){
+				return true;
+			}
+		}
+
+		return edgesFilterValues[edge.label];
+
+		
+	};
+	
+	const edgeFilters = document.getElementsByName("edgesFilter");
+
+	edgeFilters.forEach((filter) =>
+        filter.addEventListener("change", (e) => {
+          const { value, checked } = e.target;
+          edgesFilterValues[value] = checked;
+          edgesView.refresh();
+        })
+      );
+
 
     var nodes = new vis.DataSet();
     var edges = new vis.DataSet();
+
+	  const edgesView = new vis.DataView(edges, { filter: edgesFilter });
     var container = document.getElementById('mynetwork');
     var data = {
       nodes: nodes,
-      edges: edges,
+      edges: edgesView,
+	  
 	  options: {
 	  interaction:{
-			 
+	 
 			hover: true
 			 
 		  }
