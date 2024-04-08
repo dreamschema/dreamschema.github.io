@@ -1290,7 +1290,7 @@ window.connections = [
       }
     },
     {
-      "name": "Инь-чунь",
+      "name": "Цзя Ин-чунь",
       "type": "secondary",
       "description": "Младшая сестра Бао-юя",
       "actions": "Сочиняет стихи по просьбе Юань-чунь.",
@@ -1300,7 +1300,7 @@ window.connections = [
       }
     },
     {
-      "name": "Тань-чунь",
+      "name": "Цзя Тань-чунь",
       "type": "secondary",
       "description": "Младшая сестра Бао-юя",
       "actions": "Сочиняет стихи по просьбе Юань-чунь.",
@@ -1310,7 +1310,7 @@ window.connections = [
       }
     },
     {
-      "name": "Си-чунь",  
+      "name": "Цзя Си-чунь",  
       "type": "secondary",
       "description": "Младшая сестра Бао-юя",
       "actions": "Сочиняет стихи по просьбе Юань-чунь.",
