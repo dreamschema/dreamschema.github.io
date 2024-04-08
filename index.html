@@ -245,6 +245,7 @@ function preTitle(text) {
 	
 	const edgeFilters = document.getElementsByName("edgesFilter");
 
+	
 	edgeFilters.forEach((filter) =>
         filter.addEventListener("change", (e) => {
           const { value, checked } = e.target;
@@ -287,6 +288,7 @@ function preTitle(text) {
       var allChapterCharacters = new Set();
       var currentChapterCharacters = new Set();
       var currentChapterCharactersActions = {};
+      var connectionsChapters = {};
 	  
 	  var allCharactersActions = {};
 	  
@@ -327,6 +329,9 @@ function preTitle(text) {
 			  relatedCharacters = [relatedCharacters];
 			}
 			relatedCharacters.forEach(function(relatedCharacter) {
+
+				
+
 			  if (!characterMap[relatedCharacter]) {
 				characterMap[relatedCharacter] = {
 				  id: relatedCharacter,
@@ -337,6 +342,11 @@ function preTitle(text) {
 				nodes.add(characterMap[relatedCharacter]);
 			  }
 			  var edgeId = character.name + '-' + relatedCharacter;
+
+			  if(!connectionsChapters[edgeId]){
+				connectionsChapters[edgeId]=""
+			  }
+			  connectionsChapters[edgeId] = connectionsChapters[edgeId] + connection.chapter + ", "
 			  if (!relationMap[edgeId]) {
 				relationMap[edgeId] = {
 				  from: character.name,
@@ -367,6 +377,11 @@ function preTitle(text) {
    //     characterMap[characterName].title =   preTitle("ASCII\n    art") ;
         nodes.update(characterMap[characterName]);
       });
+	   
+	  for(edgeId in relationMap){
+		relationMap[edgeId].title=  preTitle(connectionsChapters[edgeId])
+		edges.update(relationMap[edgeId]);
+      }
 	  
 	  
     }
