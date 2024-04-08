@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Граф связей персонажей</title>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vis-network@latest/dist/vis-network.min.js"></script>
+  <style type="text/css">
+    #mynetwork {
+      width: 100%;
+      height: 100vh;
+      border: 1px solid lightgray;
+    }
+	.vis-tooltip{
+		position: absolute;
+		z-index: 1111;
+	}
+	pre{
+		background:white;
+		padding:10px;
+		border:1px solid black;
+	}
+  </style>
+</head>
+<body>
+  <div>
+    <label for="startChapter">Начальная глава:</label>
+    <input type="number" id="startChapter" value="1">
+    <label for="endChapter">Конечная глава:</label>
+    <input type="number" id="endChapter" value="88">
+    <label for="currentChapter">Текущая глава:</label>
+    <input type="number" id="currentChapter" value="22">
+    <button onclick="updateGraph()">Обновить граф</button>
+  </div>
+  <div id="mynetwork"></div>
+
+ <script type="text/javascript" src="/RESULT.js"></script>
+ 
+  <script type="text/javascript">
+  
+  function htmlTitle(html) {
+  const container = document.createElement("div");
+  container.innerHTML = html;
+  return container;
+}
+
+function preTitle(text) {
+        const container = document.createElement("pre");
+        container.innerText = text;
+        return container;
+      }
+ 
+
+    var nodes = new vis.DataSet();
+    var edges = new vis.DataSet();
+    var container = document.getElementById('mynetwork');
+    var data = {
+      nodes: nodes,
+      edges: edges,
+	  options: {
+	  interaction:{
+			 
+			hover: true
+			 
+		  }
+		}
+    };
+    var options = {};
+    var network = new vis.Network(container, data, options);
+
+    function updateGraph() {
+      var startChapter = parseInt(document.getElementById('startChapter').value);
+      var endChapter = parseInt(document.getElementById('endChapter').value);
+      var currentChapter = parseInt(document.getElementById('currentChapter').value);
+
+      nodes.clear();
+      edges.clear();
+
+      var characterMap = {};
+      var relationMap = {};
+      var allChapterCharacters = new Set();
+      var currentChapterCharacters = new Set();
+      var currentChapterCharactersActions = {};
+	  
+	  var allCharactersActions = {};
+	  
+	 window.connections.forEach(function(connection) {
+	  if (connection.chapter >= startChapter && connection.chapter <= endChapter) {
+		  
+		
+		connection.characters.forEach(function(character) {
+			
+		   if(!allCharactersActions[character.name]){
+			   allCharactersActions[character.name] = "";
+		   }
+		   allCharactersActions[character.name] = allCharactersActions[character.name] + connection.chapter + ": "+character.actions + "\n"
+		   
+		   
+		  if (!characterMap[character.name]) {
+			characterMap[character.name] = {
+			  id: character.name,
+			  label: character.name,
+			//  title: 'sd',//character.description,
+			  color: '#DCDCDC'
+			};
+			nodes.add(characterMap[character.name]);
+		  }
+
+		  if (connection.chapter === currentChapter) {
+			currentChapterCharacters.add(character.name);
+			currentChapterCharactersActions[character.name] = character.description + "\n" + character.actions
+		  }else{
+			allChapterCharacters.add(character.name);
+			allChapterCharacters[character.name] = character.description  
+
+		  }
+		if(character.relations) {
+		  Object.keys(character.relations).forEach(function(relation) {
+			var relatedCharacters = character.relations[relation];
+			if (!Array.isArray(relatedCharacters)) {
+			  relatedCharacters = [relatedCharacters];
+			}
+			relatedCharacters.forEach(function(relatedCharacter) {
+			  if (!characterMap[relatedCharacter]) {
+				characterMap[relatedCharacter] = {
+				  id: relatedCharacter,
+				  label: relatedCharacter,
+				//   title: 's',
+				  color: '#DCDCDC'
+				};
+				nodes.add(characterMap[relatedCharacter]);
+			  }
+			  var edgeId = character.name + '-' + relatedCharacter;
+			  if (!relationMap[edgeId]) {
+				relationMap[edgeId] = {
+				  from: character.name,
+				  to: relatedCharacter,
+				  label: relation,
+				  arrows: "to"
+				};
+				edges.add(relationMap[edgeId]);
+			  }
+			});
+		  });
+		  
+		}
+		});
+	  }
+	});
+      allChapterCharacters.forEach(function(characterName) {
+       // characterMap[characterName].color = '#97C2FC';
+        characterMap[characterName].title =    preTitle(characterName + "\n" + allChapterCharacters[characterName] + "\n"+allCharactersActions[characterName] );
+   //     characterMap[characterName].title =   preTitle("ASCII\n    art") ;
+        nodes.update(characterMap[characterName]);
+      });
+	  
+	  
+	    currentChapterCharacters.forEach(function(characterName) {
+        characterMap[characterName].color = '#97C2FC';
+        characterMap[characterName].title =    preTitle(characterName + "\n" + currentChapterCharactersActions[characterName] + "\n"+allCharactersActions[characterName] );
+   //     characterMap[characterName].title =   preTitle("ASCII\n    art") ;
+        nodes.update(characterMap[characterName]);
+      });
+	  
+	  
+    }
+  </script>
+</body>
+</html>
