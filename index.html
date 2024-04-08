@@ -344,7 +344,7 @@ function preTitle(text) {
 			  var edgeId = character.name + '-' + relatedCharacter;
 
 			  if(!connectionsChapters[edgeId]){
-				connectionsChapters[edgeId]=""
+				connectionsChapters[edgeId]="Главы, в которых упоминается связь: "
 			  }
 			  connectionsChapters[edgeId] = connectionsChapters[edgeId] + connection.chapter + ", "
 			  if (!relationMap[edgeId]) {
