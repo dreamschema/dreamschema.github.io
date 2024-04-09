@@ -177,7 +177,7 @@
   </div>
   <div id="mynetwork"></div>
 
- <script type="text/javascript" src="/RESULT.js"></script>
+ <script type="text/javascript" src="/compiled.js"></script>
  
   <script type="text/javascript">
   
@@ -352,8 +352,23 @@ function preTitle(text) {
 				  from: character.name,
 				  to: relatedCharacter,
 				  label: relation,
+				  
 				  arrows: "to"
 				};
+
+				for(key in window.truth_connections.characters){
+					name = window.truth_connections.characters[key].name
+					if (name==character.name) {
+					
+						if(typeof(window.truth_connections.characters[key].relations[relation]) !== 'undefined'){
+							if ( window.truth_connections.characters[key].relations[relation].indexOf(  relatedCharacter)!=-1) {
+								relationMap[edgeId].color = '#00aa00'
+								relationMap[edgeId].approved = true
+							}
+						}
+					}
+				}
+
 				edges.add(relationMap[edgeId]);
 			  }
 			});
@@ -380,6 +395,9 @@ function preTitle(text) {
 	   
 	  for(edgeId in relationMap){
 		relationMap[edgeId].title=  preTitle(connectionsChapters[edgeId])
+		if(relationMap[edgeId].approved){
+			relationMap[edgeId].title=  preTitle("Проверенная связь\n"+connectionsChapters[edgeId])
+		}
 		edges.update(relationMap[edgeId]);
       }
 	  

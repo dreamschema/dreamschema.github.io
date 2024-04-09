@@ -1,0 +1,1164 @@
+{
+    "characters": [
+        {
+            "name": "Цзя Бао-юй",
+            "type": "primary",
+            "relations": {
+                "grandmother": [
+                    "Матушка Цзя"
+                ],
+                "cousin": [
+                    "Линь Дай-юй",
+                    "Сюэ Бао-чай",
+                    "Ван Си-фэн (Фын-цзе)",
+                    "Ши Сян-юнь",
+                    "Цзя Тань-чунь"
+                ],
+                "maid": [
+                    "Си-жэнь",
+                    "Цин-вэнь",
+                    "Цянь-сюэ",
+                    "Шэ-юэ",
+                    "Сяо-хун",
+                    "Цю-вэнь",
+                    "Би-хэнь"
+                ],
+                "friend": [
+                    "Цинь Чжун",
+                    "Дай-юй",
+                    "Сян-юнь",
+                    "Бао-чай",
+                    "Сюэ Пань"
+                ],
+                "father": [
+                    "Цзя Чжэн"
+                ],
+                "servant": [
+                    "Ли Гуй",
+                    "Мин-янь",
+                    "Бэй-мин"
+                ],
+                "mother": [
+                    "Госпожа Ван"
+                ],
+                "sister": [
+                    "Цзя Юань-чунь"
+                ],
+                "uncle": [
+                    "Цзя Чжэн"
+                ]
+            }
+        },
+        {
+            "name": "Линь Дай-юй",
+            "type": "primary",
+            "relations": {
+                "cousin": [
+                    "Цзя Бао-юй",
+                    "Цзя Юань-чунь",
+                    "Сюэ Бао-чай",
+                    "Ши Сян-юнь"
+                ],
+                "father": [
+                    "Линь Жу-хай"
+                ],
+                "escort": [
+                    "Цзя Лянь"
+                ],
+                "maid": [
+                    "Цзы-цзюань"
+                ]
+            }
+        },
+        {
+            "name": "Сюэ Бао-чай",
+            "type": "primary",
+            "relations": {
+                "cousin": [
+                    "Цзя Бао-юй",
+                    "Цзя Юань-чунь",
+                    "Линь Дай-юй",
+                    "Цзя Хуань",
+                    "Ши Сян-юнь",
+                    "Цзя Тань-чунь"
+                ],
+                "mother": [
+                    "Тетушка Сюэ",
+                    "Госпожа Ван"
+                ],
+                "brother": [
+                    "Сюэ Пань"
+                ]
+            }
+        },
+        {
+            "name": "Тетушка Сюэ",
+            "type": "secondary",
+            "relations": {
+                "nephew": [
+                    "Цзя Бао-юй"
+                ],
+                "daughter": [
+                    "Сюэ Бао-чай"
+                ]
+            }
+        },
+        {
+            "name": "Матушка Цзя",
+            "type": "secondary",
+            "relations": {
+                "grandson": [
+                    "Цзя Бао-юй",
+                    "Цзя Хуань",
+                    "Цзя Лань"
+                ],
+                "son": [
+                    "Цзя Чжэн"
+                ],
+                "sons": [
+                    "Цзя Шэ",
+                    "Цзя Чжэн"
+                ],
+                "daughter-in-law": [
+                    "Ван Си-фэн (Фын-цзе)",
+                    "Госпожа Ван"
+                ],
+                "granddaughter": [
+                    "Цзя Юань-чунь",
+                    "Ван Си-фэн (Фын-цзе)",
+                    "Цзя Ин-чунь",
+                    "Цзя Тань-чунь",
+                    "Цзя Си-чунь"
+                ],
+                "daughters-in-law": [
+                    "Госпожа Ван",
+                    "Ли Вань"
+                ],
+                "granddaughter-in-law": [
+                    "Ван Си-фэн (Фын-цзе)"
+                ]
+            }
+        },
+        {
+            "name": "Си-жэнь",
+            "type": "secondary",
+            "relations": {
+                "master": [
+                    "Цзя Бао-юй"
+                ],
+                "mother": [
+                    "Мать Си-жэнь"
+                ],
+                "brother": [
+                    "Хуа Цзы-фан"
+                ]
+            }
+        },
+        {
+            "name": "Цин-вэнь",
+            "type": "secondary",
+            "relations": {
+                "master": [
+                    "Цзя Бао-юй"
+                ],
+                "colleague": [
+                    "Си-жэнь"
+                ]
+            }
+        },
+        {
+            "name": "Цянь-сюэ",
+            "type": "secondary",
+            "relations": {
+                "master": [
+                    "Цзя Бао-юй"
+                ]
+            }
+        },
+        {
+            "name": "Мамка Ли",
+            "type": "secondary",
+            "relations": {
+                "master": [
+                    "Цзя Бао-юй"
+                ],
+                "nursed": [
+                    "Цзя Бао-юй"
+                ]
+            }
+        },
+        {
+            "name": "Цинь Чжун",
+            "type": "primary",
+            "relations": {
+                "father": [
+                    "Цинь Бан-э",
+                    "Цинь Бан-е"
+                ],
+                "friend": [
+                    "Цзя Бао-юй"
+                ],
+                "sister": [
+                    "Жена Цзя Жуна"
+                ],
+                "lover": [
+                    "Чжи-нэн"
+                ]
+            }
+        },
+        {
+            "name": "Цинь Бан-э",
+            "type": "secondary",
+            "relations": {
+                "son": [
+                    "Цинь Чжун"
+                ]
+            }
+        },
+        {
+            "name": "Цзя Дай-жу",
+            "type": "secondary",
+            "relations": {
+                "student": [
+                    "Цзя Бао-юй",
+                    "Цинь Чжун"
+                ],
+                "grandson": [
+                    "Цзя Жуй"
+                ]
+            }
+        },
+        {
+            "name": "Цзя Чжэн",
+            "type": "primary",
+            "relations": {
+                "son": [
+                    "Цзя Бао-юй",
+                    "Цзя Чжэнь",
+                    "Цзя Хуань",
+                    "Цзя Лань"
+                ],
+                "mother": [
+                    "Матушка Цзя"
+                ],
+                "wife": [
+                    "Госпожа Ван"
+                ],
+                "nephew": [
+                    "Цзя Чжэнь"
+                ],
+                "daughter": [
+                    "Цзя Юань-чунь"
+                ]
+            }
+        },
+        {
+            "name": "Ли Гуй",
+            "type": "secondary",
+            "relations": {
+                "master": [
+                    "Цзя Бао-юй"
+                ]
+            }
+        },
+        {
+            "name": "Мин-янь",
+            "type": "secondary",
+            "relations": {
+                "master": [
+                    "Цзя Бао-юй"
+                ]
+            }
+        },
+        {
+            "name": "Цзя Жуй",
+            "type": "secondary",
+            "relations": {
+                "grandfather": [
+                    "Цзя Дай-жу"
+                ],
+                "friend": [
+                    "Цзинь Жун",
+                    "Сюэ Пань"
+                ],
+                "crush": [
+                    "Ван Си-фэн (Фын-цзе)"
+                ],
+                "cousin": [
+                    "Цзя Жун",
+                    "Цзя Цян"
+                ]
+            }
+        },
+        {
+            "name": "Цзинь Жун",
+            "type": "secondary",
+            "relations": {
+                "friend": [
+                    "Цзя Жуй"
+                ],
+                "aunt": [
+                    "Жена Цзя Хуана"
+                ],
+                "mother": [
+                    "Урожденная Ху"
+                ]
+            }
+        },
+        {
+            "name": "Сян-лянь",
+            "type": "secondary",
+            "relations": {
+                "friend": [
+                    "Цинь Чжун",
+                    "Юй-ай"
+                ]
+            }
+        },
+        {
+            "name": "Юй-ай",
+            "type": "secondary",
+            "relations": {
+                "friend": [
+                    "Сян-лянь",
+                    "Цинь Чжун"
+                ]
+            }
+        },
+        {
+            "name": "Сюэ Пань",
+            "type": "secondary",
+            "relations": {
+                "friend": [
+                    "Цзя Жуй",
+                    "Цзя Бао-юй"
+                ],
+                "sister": [
+                    "Сюэ Бао-чай"
+                ]
+            }
+        },
+        {
+            "name": "Цзя Цян",
+            "type": "secondary",
+            "relations": {
+                "friend": [
+                    "Цзя Жун"
+                ],
+                "cousin": [
+                    "Цзя Жун",
+                    "Цзя Лянь"
+                ]
+            }
+        },
+        {
+            "name": "Цзя Жун",
+            "type": "secondary",
+            "relations": {
+                "father": [
+                    "Цзя Чжэнь"
+                ],
+                "friend": [
+                    "Цзя Цян"
+                ],
+                "mother": [
+                    "Госпожа Ю"
+                ],
+                "wife": [
+                    "Жена Цзя Жуна",
+                    "Цинь Кэ-цин"
+                ],
+                "cousin": [
+                    "Цзя Цян",
+                    "Цзя Лянь"
+                ],
+                "grandfather": [
+                    "Цзя Чжэн"
+                ]
+            }
+        },
+        {
+            "name": "Цзя Чжэнь",
+            "type": "secondary",
+            "relations": {
+                "son": [
+                    "Цзя Жун"
+                ],
+                "nephew": [
+                    "Цзя Цян"
+                ],
+                "wife": [
+                    "Госпожа Ю"
+                ],
+                "uncle": [
+                    "Цзя Цзин",
+                    "Цзя Чжэн"
+                ],
+                "father": [
+                    "Цзя Чжэн"
+                ]
+            }
+        },
+        {
+            "name": "Жена Цзя Хуана",
+            "type": "secondary",
+            "relations": {
+                "husband": [
+                    "Цзя Хуан"
+                ],
+                "nephew": [
+                    "Цзинь Жун"
+                ]
+            }
+        },
+        {
+            "name": "Цзя Хуан",
+            "type": "secondary",
+            "relations": {
+                "wife": [
+                    "Жена Цзя Хуана"
+                ]
+            }
+        },
+        {
+            "name": "Госпожа Ю",
+            "type": "secondary",
+            "relations": {
+                "husband": [
+                    "Цзя Чжэнь"
+                ],
+                "son": [
+                    "Цзя Жун"
+                ],
+                "daughter-in-law": [
+                    "Жена Цзя Жуна",
+                    "Цинь Кэ-цин"
+                ],
+                "mother-in-law": [
+                    "Матушка Цзя"
+                ]
+            }
+        },
+        {
+            "name": "Жена Цзя Жуна",
+            "type": "secondary",
+            "relations": {
+                "husband": [
+                    "Цзя Жун"
+                ],
+                "brother": [
+                    "Цинь Чжун"
+                ],
+                "father-in-law": [
+                    "Цзя Чжэнь"
+                ],
+                "mother-in-law": [
+                    "Госпожа Ю"
+                ]
+            }
+        },
+        {
+            "name": "Фын Цзы-ин",
+            "type": "secondary",
+            "relations": {
+                "friend": [
+                    "Цзя Чжэнь",
+                    "Чжан Ю-ши"
+                ]
+            }
+        },
+        {
+            "name": "Чжан Ю-ши",
+            "type": "secondary",
+            "relations": {
+                "friend": [
+                    "Фын Цзы-ин"
+                ]
+            }
+        },
+        {
+            "name": "Цзя Цзин",
+            "type": "secondary",
+            "relations": {
+                "relative": [
+                    "Цзя Чжэнь"
+                ],
+                "nephew": [
+                    "Цзя Чжэнь"
+                ]
+            }
+        },
+        {
+            "name": "Цинь Кэ-цин",
+            "type": "secondary",
+            "relations": {
+                "husband": [
+                    "Цзя Жун"
+                ],
+                "mother-in-law": [
+                    "Госпожа Ю"
+                ]
+            }
+        },
+        {
+            "name": "Госпожа Син",
+            "type": "secondary",
+            "relations": {
+                "husband": [
+                    "Цзя Шэ"
+                ]
+            }
+        },
+        {
+            "name": "Госпожа Ван",
+            "type": "primary",
+            "relations": {
+                "husband": [
+                    "Цзя Чжэн"
+                ],
+                "son": [
+                    "Цзя Бао-юй"
+                ],
+                "niece": [
+                    "Ван Си-фэн (Фын-цзе)"
+                ],
+                "mother-in-law": [
+                    "Матушка Цзя"
+                ],
+                "daughter": [
+                    "Цзя Юань-чунь",
+                    "Сюэ Бао-чай"
+                ],
+                "maid": [
+                    "Цзинь-чуань"
+                ],
+                "nephew": [
+                    "Цзя Бао-юй"
+                ]
+            }
+        },
+        {
+            "name": "Ван Си-фэн (Фын-цзе)",
+            "type": "primary",
+            "relations": {
+                "husband": [
+                    "Цзя Лянь"
+                ],
+                "aunt": [
+                    "Госпожа Ван"
+                ],
+                "cousin": [
+                    "Цзя Бао-юй"
+                ],
+                "mother-in-law": [
+                    "Матушка Цзя",
+                    "Госпожа Ван",
+                    "Ванъ-эр"
+                ],
+                "admirer": [
+                    "Цзя Жуй"
+                ],
+                "maid": [
+                    "Пин-эр"
+                ],
+                "nephew": [
+                    "Цзя Юнь"
+                ],
+                "daughter": [
+                    "Цзя Да-цзе"
+                ],
+                "sister-in-law": [
+                    "Ли Вань"
+                ],
+                "niece": [
+                    "Цзя Цзе"
+                ],
+                "grandmother-in-law": [
+                    "Матушка Цзя"
+                ]
+            }
+        },
+        {
+            "name": "Цзя Лянь",
+            "type": "secondary",
+            "relations": {
+                "wife": [
+                    "Ван Си-фэн (Фын-цзе)"
+                ],
+                "wet-nurse": [
+                    "Мамка Чжао"
+                ],
+                "relative": [
+                    "Цзя Чжэн"
+                ],
+                "mistress": [
+                    "«Барышня для многих»"
+                ],
+                "maid": [
+                    "Пин-эр"
+                ],
+                "nephew": [
+                    "Цзя Юнь"
+                ],
+                "cousin": [
+                    "Цзя Бао-юй"
+                ],
+                "daughter": [
+                    "Цзя Да-цзе"
+                ]
+            }
+        },
+        {
+            "name": "Цзя Шэ",
+            "type": "secondary",
+            "relations": {
+                "wife": [
+                    "Госпожа Син"
+                ],
+                "mother": [
+                    "Матушка Цзя"
+                ],
+                "brother": [
+                    "Цзя Чжэн"
+                ]
+            }
+        },
+        {
+            "name": "Линь Жу-хай",
+            "type": "secondary",
+            "relations": {
+                "daughter": [
+                    "Линь Дай-юй"
+                ]
+            }
+        },
+        {
+            "name": "Даосский монах",
+            "type": "secondary",
+            "relations": []
+        },
+        {
+            "name": "Цзин-хуань",
+            "type": "secondary",
+            "relations": []
+        },
+        {
+            "name": "Жуй-чжу",
+            "type": "secondary",
+            "relations": {
+                "mistress": [
+                    "Цинь Кэ-цин"
+                ]
+            }
+        },
+        {
+            "name": "Бао-чжу",
+            "type": "secondary",
+            "relations": {
+                "adoptive_mother": [
+                    "Цинь Кэ-цин"
+                ],
+                "father": [
+                    "Цзя Чжэн"
+                ]
+            }
+        },
+        {
+            "name": "Бэйцзинский-ван",
+            "type": "secondary",
+            "relations": []
+        },
+        {
+            "name": "Цзин-сюй",
+            "type": "secondary",
+            "relations": []
+        },
+        {
+            "name": "Чжи-нэн",
+            "type": "secondary",
+            "relations": {
+                "lover": [
+                    "Цинь Чжун"
+                ]
+            }
+        },
+        {
+            "name": "Юнь Гуан",
+            "type": "secondary",
+            "relations": []
+        },
+        {
+            "name": "Цзя Юань-чунь",
+            "type": "secondary",
+            "relations": {
+                "mother": [
+                    "Госпожа Ван"
+                ],
+                "grandmother": [
+                    "Матушка Цзя"
+                ],
+                "father": [
+                    "Цзя Чжэн"
+                ],
+                "brother": [
+                    "Цзя Бао-юй"
+                ]
+            }
+        },
+        {
+            "name": "Дай-юй",
+            "type": "secondary",
+            "relations": {
+                "cousin": [
+                    "Цзя Бао-юй"
+                ]
+            }
+        },
+        {
+            "name": "Цзя Ин-чунь",
+            "type": "secondary",
+            "relations": {
+                "sister": [
+                    "Цзя Юань-чунь",
+                    "Цзя Тань-чунь",
+                    "Цзя Си-чунь"
+                ],
+                "brother": {
+                    "0": "Цзя Бао-юй",
+                    "2": "Цзя Хуань",
+                    "3": "Цзя Лань"
+                },
+                "grandmother": [
+                    "Матушка Цзя"
+                ]
+            }
+        },
+        {
+            "name": "Цзя Тань-чунь",
+            "type": "secondary",
+            "relations": {
+                "sister": [
+                    "Цзя Юань-чунь",
+                    "Цзя Ин-чунь",
+                    "Цзя Си-чунь"
+                ],
+                "brother": [
+                    "Цзя Бао-юй",
+                    "Цзя Хуань",
+                    "Цзя Лань"
+                ],
+                "grandmother": [
+                    "Матушка Цзя"
+                ],
+                "cousin": [
+                    "Сюэ Бао-чай"
+                ]
+            }
+        },
+        {
+            "name": "Цзя Си-чунь",
+            "type": "secondary",
+            "relations": {
+                "sister": [
+                    "Цзя Юань-чунь",
+                    "Цзя Ин-чунь",
+                    "Цзя Тань-чунь"
+                ],
+                "brother": {
+                    "0": "Цзя Бао-юй",
+                    "2": "Цзя Хуань",
+                    "3": "Цзя Лань"
+                },
+                "grandmother": [
+                    "Матушка Цзя"
+                ]
+            }
+        },
+        {
+            "name": "Ли Вань",
+            "type": "secondary",
+            "relations": {
+                "sister-in-law": [
+                    "Цзя Юань-чунь",
+                    "Ван Си-фэн (Фын-цзе)"
+                ],
+                "son": [
+                    "Цзя Лань"
+                ],
+                "mother-in-law": [
+                    "Матушка Цзя"
+                ]
+            }
+        },
+        {
+            "name": "Цзя Лань",
+            "type": "secondary",
+            "relations": {
+                "aunt": [
+                    "Цзя Юань-чунь"
+                ],
+                "mother": [
+                    "Ли Вань"
+                ],
+                "father": [
+                    "Цзя Чжэн"
+                ],
+                "grandmother": [
+                    "Матушка Цзя"
+                ],
+                "brother": [
+                    "Цзя Хуань"
+                ]
+            }
+        },
+        {
+            "name": "Лин-гуань",
+            "type": "secondary",
+            "relations": []
+        },
+        {
+            "name": "Мать Си-жэнь",
+            "type": "secondary",
+            "relations": {
+                "daughter": [
+                    "Си-жэнь"
+                ]
+            }
+        },
+        {
+            "name": "Хуа Цзы-фан",
+            "type": "secondary",
+            "relations": {
+                "sister": [
+                    "Си-жэнь"
+                ]
+            }
+        },
+        {
+            "name": "Вань-эр",
+            "type": "secondary",
+            "relations": []
+        },
+        {
+            "name": "Ши Сян-юнь",
+            "type": "secondary",
+            "relations": {
+                "cousin": [
+                    "Цзя Бао-юй",
+                    "Линь Дай-юй",
+                    "Сюэ Бао-чай"
+                ],
+                "maid": [
+                    "Цуй-люй"
+                ]
+            }
+        },
+        {
+            "name": "Цзя Хуань",
+            "type": "secondary",
+            "relations": {
+                "cousin": [
+                    "Сюэ Бао-чай"
+                ],
+                "half-brother": [
+                    "Цзя Бао-юй"
+                ],
+                "mother": [
+                    "Наложница Чжао"
+                ],
+                "father": [
+                    "Цзя Чжэн"
+                ],
+                "grandmother": [
+                    "Матушка Цзя"
+                ],
+                "brother": [
+                    "Цзя Бао-юй",
+                    "Цзя Лань"
+                ]
+            }
+        },
+        {
+            "name": "Сян-юнь",
+            "type": "secondary",
+            "relations": {
+                "cousin": [
+                    "Цзя Бао-юй",
+                    "Дай-юй"
+                ]
+            }
+        },
+        {
+            "name": "Бао-чай",
+            "type": "primary",
+            "relations": {
+                "cousin": [
+                    "Цзя Бао-юй"
+                ]
+            }
+        },
+        {
+            "name": "Пин-эр",
+            "type": "secondary",
+            "relations": {
+                "master": [
+                    "Ван Си-фэн (Фын-цзе)"
+                ],
+                "master-husband": [
+                    "Цзя Лянь"
+                ]
+            }
+        },
+        {
+            "name": "«Барышня для многих»",
+            "type": "secondary",
+            "relations": {
+                "husband": [
+                    "До Гуань"
+                ],
+                "lover": [
+                    "Цзя Лянь"
+                ]
+            }
+        },
+        {
+            "name": "Цзы-цзюань",
+            "type": "secondary",
+            "relations": {
+                "mistress": [
+                    "Линь Дай-юй"
+                ]
+            }
+        },
+        {
+            "name": "Цуй-люй",
+            "type": "secondary",
+            "relations": {
+                "mistress": [
+                    "Ши Сян-юнь"
+                ]
+            }
+        },
+        {
+            "name": "Цзя Юнь",
+            "type": "secondary",
+            "relations": {
+                "mother": [
+                    "Пятая тетушка"
+                ],
+                "aunt": [
+                    "Ван Си-фэн (Фын-цзе)"
+                ],
+                "uncle": [
+                    "Цзя Лянь",
+                    "Бу Ши-жэнь"
+                ]
+            }
+        },
+        {
+            "name": "Сяо-хун",
+            "type": "secondary",
+            "relations": {
+                "master": [
+                    "Цзя Бао-юй"
+                ],
+                "father": [
+                    "Линь Чжи-сяо"
+                ]
+            }
+        },
+        {
+            "name": "Цю-вэнь",
+            "type": "secondary",
+            "relations": {
+                "master": [
+                    "Цзя Бао-юй"
+                ],
+                "coworker": [
+                    "Би-хэнь",
+                    "Сяо-хун"
+                ]
+            }
+        },
+        {
+            "name": "Би-хэнь",
+            "type": "secondary",
+            "relations": {
+                "master": [
+                    "Цзя Бао-юй"
+                ],
+                "coworker": [
+                    "Цю-вэнь",
+                    "Сяо-хун"
+                ],
+                "colleague": [
+                    "Си-жэнь",
+                    "Цин-вэнь"
+                ]
+            }
+        },
+        {
+            "name": "Бэй-мин",
+            "type": "secondary",
+            "relations": {
+                "master": [
+                    "Цзя Бао-юй"
+                ]
+            }
+        },
+        {
+            "name": "Цзя Цинь",
+            "type": "secondary",
+            "relations": []
+        },
+        {
+            "name": "Ни Эр",
+            "type": "secondary",
+            "relations": {
+                "neighbor": [
+                    "Цзя Юнь"
+                ]
+            }
+        },
+        {
+            "name": "Бу Ши-жэнь",
+            "type": "secondary",
+            "relations": {
+                "nephew": [
+                    "Цзя Юнь"
+                ]
+            }
+        },
+        {
+            "name": "Пятая тетушка",
+            "type": "secondary",
+            "relations": {
+                "son": [
+                    "Цзя Юнь"
+                ]
+            }
+        },
+        {
+            "name": "Наложница Чжао",
+            "type": "secondary",
+            "relations": {
+                "master": [
+                    "Цзя Чжэн"
+                ],
+                "son": [
+                    "Цзя Хуань"
+                ]
+            }
+        },
+        {
+            "name": "Ван Цзы-тэн",
+            "type": "secondary",
+            "relations": []
+        },
+        {
+            "name": "Буддийский монах",
+            "type": "secondary",
+            "relations": []
+        },
+        {
+            "name": "Даос",
+            "type": "secondary",
+            "relations": []
+        },
+        {
+            "name": "Чжуй-эр",
+            "type": "secondary",
+            "relations": []
+        },
+        {
+            "name": "Ван Си-жэнь",
+            "type": "primary",
+            "relations": {
+                "master": [
+                    "Цзя Бао-юй"
+                ]
+            }
+        },
+        {
+            "name": "Цзя Да-цзе",
+            "type": "secondary",
+            "relations": {
+                "mother": [
+                    "Ван Си-фэн (Фын-цзе)"
+                ],
+                "father": [
+                    "Цзя Лянь"
+                ]
+            }
+        },
+        {
+            "name": "Линь Чжи-сяо",
+            "type": "secondary",
+            "relations": {
+                "daughter": [
+                    "Сяо-хун"
+                ]
+            }
+        },
+        {
+            "name": "Цзян Юй-хань",
+            "type": "secondary",
+            "relations": []
+        },
+        {
+            "name": "Юнь-эр",
+            "type": "secondary",
+            "relations": []
+        },
+        {
+            "name": "Даос Чжан",
+            "type": "secondary",
+            "relations": []
+        },
+        {
+            "name": "Цзинь-чуань",
+            "type": "secondary",
+            "relations": {
+                "mistress": [
+                    "Госпожа Ван"
+                ],
+                "master": [
+                    "Цзя Бао-юй"
+                ]
+            }
+        },
+        {
+            "name": "Шэ-юэ",
+            "type": "secondary",
+            "relations": {
+                "master": [
+                    "Цзя Бао-юй"
+                ]
+            }
+        },
+        {
+            "name": "Вэнь-гуань",
+            "type": "secondary",
+            "relations": []
+        },
+        {
+            "name": "Бао-гуань",
+            "type": "secondary",
+            "relations": []
+        },
+        {
+            "name": "Юй-гуань",
+            "type": "secondary",
+            "relations": []
+        },
+        {
+            "name": "Ци-гуань",
+            "type": "secondary",
+            "relations": {
+                "friend": [
+                    "Цзя Бао-юй"
+                ]
+            }
+        }
+    ]
+}
