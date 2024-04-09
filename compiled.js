@@ -3358,7 +3358,7 @@ window.connections = [
                         "Цзя Лянь"
                     ],
                     "daughter": [
-                        "Цзя Да-цзе"
+                        "Цзя Цяо-цзе"
                     ],
                     "sister-in-law": [
                         "Ли Вань"
@@ -3377,7 +3377,7 @@ window.connections = [
                 }
             },
             {
-                "name": "Цзя Да-цзе",
+                "name": "Цзя Цяо-цзе",
                 "type": "secondary",
                 "description": "Дочь Цзя Фын-цзе и Цзя Ляня",
                 "actions": "Участвует в празднике",
@@ -3418,7 +3418,7 @@ window.connections = [
                         "Ван Си-фэн (Фын-цзе)"
                     ],
                     "daughter": [
-                        "Цзя Да-цзе"
+                        "Цзя Цяо-цзе"
                     ]
                 }
             },
