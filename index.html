@@ -23,7 +23,7 @@
 <body>
   <div>
     <label for="startChapter">Начальная глава:</label>
-    <input type="number" id="startChapter" value="1">
+    <input type="number" id="startChapter" value="0">
     <label for="endChapter">Конечная глава:</label>
     <input type="number" id="endChapter" value="88">
     <label for="currentChapter">Текущая глава:</label>
@@ -180,7 +180,10 @@
  <script type="text/javascript" src="/compiled.js"></script>
  
   <script type="text/javascript">
-  
+  window.onload = function(){
+
+	updateGraph();
+  }
   function htmlTitle(html) {
   const container = document.createElement("div");
   container.innerHTML = html;
