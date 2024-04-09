@@ -31,7 +31,8 @@ window.connections = [
                 "actions": "",
                 "relations": {
                     "son": [
-                        "Цзя Бао-юй"
+                        "Цзя Бао-юй",
+                        "Цзя Хуань"
                     ],
                     "daughter": [
                         "Цзя Тань-чунь"
@@ -44,6 +45,20 @@ window.connections = [
                     ],
                     "brother": [
                         "Цзя Шэ"
+                    ]
+                }
+            },
+            {
+                "name": "Цзя Хуань",
+                "type": "",
+                "description": "",
+                "actions": "",
+                "relations": {
+                    "father": [
+                        "Цзя Чжэн"
+                    ],
+                    "mother": [
+                        "Наложница Чжао"
                     ]
                 }
             },
@@ -100,6 +115,12 @@ window.connections = [
                 "relations": {
                     "brother": [
                         "Цзя Бао-юй"
+                    ],
+                    "father": [
+                        "Цзя Чжэн"
+                    ],
+                    "mother": [
+                        "Наложница Чжао"
                     ]
                 }
             },
@@ -148,9 +169,6 @@ window.connections = [
                     ],
                     "son": [
                         "Цзя Бао-юй"
-                    ],
-                    "daughter": [
-                        "Цзя Тань-чунь"
                     ],
                     "husband": [
                         "Цзя Чжэн"
@@ -297,9 +315,6 @@ window.connections = [
                     ],
                     "son": [
                         "Цзя Бао-юй"
-                    ],
-                    "daughter": [
-                        "Цзя Тань-чунь"
                     ],
                     "sister": [
                         "Тетушка Сюэ"
@@ -2856,9 +2871,6 @@ window.connections = [
                     "son": [
                         "Цзя Бао-юй"
                     ],
-                    "daughter": [
-                        "Цзя Тань-чунь"
-                    ],
                     "sister": [
                         "Тетушка Сюэ"
                     ]
@@ -5079,9 +5091,6 @@ window.connections = [
                     "son": [
                         "Цзя Бао-юй"
                     ],
-                    "daughter": [
-                        "Цзя Тань-чунь"
-                    ],
                     "husband": [
                         "Цзя Чжэн"
                     ]
@@ -5426,7 +5435,7 @@ window.connections = [
                         "Матушка Цзя"
                     ],
                     "mother": [
-                        "Госпожа Ван"
+                        "Наложница Чжао"
                     ]
                 }
             },
@@ -5488,9 +5497,6 @@ window.connections = [
                     ],
                     "mother-in-law": [
                         "Матушка Цзя"
-                    ],
-                    "daughter": [
-                        "Цзя Тань-чунь"
                     ],
                     "sister": [
                         "Тетушка Сюэ"
@@ -5602,7 +5608,8 @@ window.truth_connections = {
             "name": "Цзя Чжэн",
             "relations": {
                 "son": [
-                    "Цзя Бао-юй"
+                    "Цзя Бао-юй",
+                    "Цзя Хуань"
                 ],
                 "daughter": [
                     "Цзя Тань-чунь"
@@ -5615,6 +5622,17 @@ window.truth_connections = {
                 ],
                 "brother": [
                     "Цзя Шэ"
+                ]
+            }
+        },
+        {
+            "name": "Цзя Хуань",
+            "relations": {
+                "father": [
+                    "Цзя Чжэн"
+                ],
+                "mother": [
+                    "Наложница Чжао"
                 ]
             }
         },
@@ -5659,6 +5677,12 @@ window.truth_connections = {
             "relations": {
                 "brother": [
                     "Цзя Бао-юй"
+                ],
+                "father": [
+                    "Цзя Чжэн"
+                ],
+                "mother": [
+                    "Наложница Чжао"
                 ]
             }
         },
@@ -5698,9 +5722,6 @@ window.truth_connections = {
                 ],
                 "son": [
                     "Цзя Бао-юй"
-                ],
-                "daughter": [
-                    "Цзя Тань-чунь"
                 ],
                 "husband": [
                     "Цзя Чжэн"
