@@ -38,7 +38,7 @@
 
 	  <div>
         <label>
-          <input type="checkbox" name="edgesFilter" value="all" checked />
+          <input type="checkbox" name="edgesFilter" value="all"  />
            Показать все связи
         </label>
       </div>
@@ -60,32 +60,32 @@
 	</div>
 
 
-		<div>  <label>   <input type="checkbox" name="edgesFilter" value="husband"  />
+		<div>  <label>   <input type="checkbox" name="edgesFilter" value="husband" checked  />
 		Is <span style="color: red">husband</span> of  </label> 
 		
-		<label>   <input type="checkbox" name="edgesFilter" value="wife"  />
+		<label>   <input type="checkbox" name="edgesFilter" value="wife"  checked />
 		Is <span style="color: red">wife</span> of  </label>    </div>
 
 
 
-		<div>  <label>   <input type="checkbox" name="edgesFilter" value="father"  />
+		<div>  <label>   <input type="checkbox" name="edgesFilter" value="father" checked  />
 		Is <span style="color: red">father</span> of  </label>    
 
-	 	  <label> <input type="checkbox" name="edgesFilter" value="mother"  />
+	 	  <label> <input type="checkbox" name="edgesFilter" value="mother"  checked />
 		Is <span style="color: red">mother</span> of   </label>    
 
-		  <label>   <input type="checkbox" name="edgesFilter" value="son"  />
+		  <label>   <input type="checkbox" name="edgesFilter" value="son" checked  />
 		Is <span style="color: red">son</span> of   </label> 
 		
-		<label>   <input type="checkbox" name="edgesFilter" value="daughter"  />
+		<label>   <input type="checkbox" name="edgesFilter" value="daughter"  checked />
 		Is <span style="color: red">daughter</span> of   </label>  </div>
 
 
 
-		<div>    <label>   <input type="checkbox" name="edgesFilter" value="sister"  />
+		<div>    <label>   <input type="checkbox" name="edgesFilter" value="sister"  checked  />
 		Is <span style="color: red">sister</span> of  </label>    
 		
-	    <label>   <input type="checkbox" name="edgesFilter" value="brother"  />
+	    <label>   <input type="checkbox" name="edgesFilter" value="brother" checked  />
 		Is <span style="color: red">brother</span> of  </label>   </div>
 		
 
@@ -198,36 +198,36 @@ function preTitle(text) {
  
  
 	const edgesFilterValues = {
-		all: true,
+		all: false,
 		other: false,
 		cousin: false,
 		nephew: false,
 		aunt: false,
 		uncle: false,
-		sister: false,
-		brother: false,
+		sister: true,
+		brother: true,
+		wife: true,
+		husband: true,
+		son: true,
+		daughter: true,
+		mother: true,
+		father: true,
 		relative: false,
 		"daughter-in-law": false,
 		"father-in-law": false,
 		"mother-in-law": false,
 		"sister-in-law": false,
-		wife: false,
-		husband: false,
 		maid: false,
 		servant: false,
 		master: false,
-		son: false,
-		daughter: false,
 		admirer: false,
 		crush: false,
 		lover: false,
-		mother: false,
 		friend: false,
 		grandfather: false,
 		grandmother: false,
 		grandson: false,
 		granddaughter: false,
-		father: false,
 		student: false,
 	};
 

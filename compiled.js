@@ -315,6 +315,9 @@ window.connections = [
                 "relations": {
                     "father": [
                         "Цзя Дай-хуа"
+                    ],
+                    "daughter": [
+                        "Цзя Си-чунь"
                     ]
                 }
             },
@@ -1191,9 +1194,9 @@ window.connections = [
                 "relations": []
             },
             {
-                "name": "Госпожа Цинь",
+                "name": "Цинь Кэ-цин",
                 "type": "secondary",
-                "description": "Жена Цзя Жуна",
+                "description": "Госпожа Цинь",
                 "actions": "Отводит уставшего Бао-юя спать к себе в дом и заботится о нем.",
                 "relations": []
             },
@@ -1311,10 +1314,10 @@ window.connections = [
             {
                 "name": "Цзя Си-чунь",
                 "type": "secondary",
-                "description": "Сестра Цзя Бао-юя",
+                "description": "Двоюродная сестра Цзя Бао-юя",
                 "actions": "",
                 "relations": {
-                    "brother": [
+                    "cousin": [
                         "Цзя Бао-юй"
                     ]
                 }
@@ -1362,7 +1365,7 @@ window.connections = [
                 }
             },
             {
-                "name": "Госпожа Цинь",
+                "name": "Цинь Кэ-цин",
                 "type": "secondary",
                 "description": "Тётя Бао-юя",
                 "actions": "Услышала, как Бао-юй во сне произносил её детское имя",
@@ -1568,7 +1571,7 @@ window.connections = [
                 "actions": "Знакомится с Бао-юем, рассказывает о сложностях с образованием. Соглашается учиться вместе с Бао-юем в домашней школе.",
                 "relations": {
                     "sister": [
-                        "Госпожа Цинь"
+                        "Цинь Кэ-цин"
                     ]
                 }
             },
@@ -1646,7 +1649,7 @@ window.connections = [
                 }
             },
             {
-                "name": "Госпожа Цинь",
+                "name": "Цинь Кэ-цин",
                 "type": "secondary",
                 "description": "Жена Цзя Жуна, сестра Цинь Чжуна",
                 "actions": "Принимает Фын-цзе и Бао-юя в поместье Нинго. Играет в маджонг с Фын-цзе и госпожой Ю.",
@@ -1666,7 +1669,7 @@ window.connections = [
                 "actions": "Приветствует Фын-цзе в поместье Нинго. Приказывает слугам связать Цзяо Да.",
                 "relations": {
                     "wife": [
-                        "Госпожа Цинь"
+                        "Цинь Кэ-цин"
                     ]
                 }
             },
@@ -1915,7 +1918,7 @@ window.connections = [
                 "actions": "Приходит на поклон к матушке Цзя вместе с Бао-юем.",
                 "relations": {
                     "father": [
-                        "Цинь Бан-э"
+                        "Цинь Бан-е"
                     ],
                     "friend": [
                         "Цзя Бао-юй"
@@ -1923,7 +1926,7 @@ window.connections = [
                 }
             },
             {
-                "name": "Цинь Бан-э",
+                "name": "Цинь Бан-е",
                 "type": "secondary",
                 "description": "Отец Цинь Чжуна",
                 "actions": "Хочет устроить сына в школу дома Цзя.",
@@ -2199,7 +2202,7 @@ window.connections = [
                 "actions": "Поссорился с Цзинь Жуном в школе",
                 "relations": {
                     "sister": [
-                        "Жена Цзя Жуна"
+                        "Цинь Кэ-цин"
                     ]
                 }
             },
@@ -2252,7 +2255,7 @@ window.connections = [
                         "Цзя Жун"
                     ],
                     "daughter-in-law": [
-                        "Жена Цзя Жуна"
+                        "Цинь Кэ-цин"
                     ]
                 }
             },
@@ -2271,7 +2274,7 @@ window.connections = [
                 }
             },
             {
-                "name": "Жена Цзя Жуна",
+                "name": "Цинь Кэ-цин",
                 "type": "secondary",
                 "description": "Невестка Цзя Чжэня и госпожи Ю, страдает от таинственной болезни",
                 "actions": "Заболела, ее состояние ухудшилось после ссоры брата с Цзинь Жуном",
@@ -2303,7 +2306,7 @@ window.connections = [
                         "Госпожа Ю"
                     ],
                     "wife": [
-                        "Жена Цзя Жуна"
+                        "Цинь Кэ-цин"
                     ]
                 }
             },
@@ -2801,7 +2804,7 @@ window.connections = [
             {
                 "name": "Цинь Кэ-цин",
                 "type": "secondary",
-                "description": "Жена Цзя Жуна",
+                "description": "Цинь Кэ-цин",
                 "actions": "Умирает в начале главы",
                 "relations": {
                     "husband": [
@@ -3025,13 +3028,9 @@ window.connections = [
             {
                 "name": "Бао-чжу",
                 "type": "secondary",
-                "description": "Незамужняя дочь Цзя Чжэна.",
+                "description": "Служанка госпожи Цинь.",
                 "actions": "Оплакивает Цинь Кэ-цин во время похоронной процессии.",
-                "relations": {
-                    "father": [
-                        "Цзя Чжэн"
-                    ]
-                }
+                "relations": []
             }
         ]
     },
@@ -6266,7 +6265,7 @@ window.connections = [
             {
                 "name": "Цзя Си-чунь",
                 "type": "secondary",
-                "description": "Младшая сестра Бао-юя",
+                "description": "Младшая двоюродная сестра Бао-юя",
                 "actions": "Навещает больного брата",
                 "relations": {
                     "grandmother": [
@@ -7282,6 +7281,9 @@ window.truth_connections = {
             "relations": {
                 "father": [
                     "Цзя Дай-хуа"
+                ],
+                "daughter": [
+                    "Цзя Си-чунь"
                 ]
             }
         },
