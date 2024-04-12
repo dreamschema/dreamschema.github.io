@@ -1,411 +1,467 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <title>Граф связей персонажей</title>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vis-network@latest/dist/vis-network.min.js"></script>
-  <style type="text/css">
-    #mynetwork {
-      width: 100%;
-      height: 100vh;
-      border: 1px solid lightgray;
-    }
-	.vis-tooltip{
-		position: absolute;
-		z-index: 1111;
-	}
-	pre{
-		background:white;
-		padding:10px;
-		border:1px solid black;
-	}
-  </style>
-</head>
-<body>
-  <div>
-    <label for="startChapter">Начальная глава:</label>
-    <input type="number" id="startChapter" value="0">
-    <label for="endChapter">Конечная глава:</label>
-    <input type="number" id="endChapter" value="88">
-    <label for="currentChapter">Текущая глава:</label>
-    <input type="number" id="currentChapter" value="22">
-    <button onclick="updateGraph()">Обновить граф</button>
-
-
-
-	 
-      Фильтр
-	  
-
-	  <div>
-        <label>
-          <input type="checkbox" name="edgesFilter" value="all"  />
-           Показать все связи
-        </label>
-      </div>
-
-
-
-	
-
-
-		<div>  <label>   <input type="checkbox" name="edgesFilter" value="nephew"  />
-		Is <span style="color: red">nephew</span> (племянник) of  </label>    
-
-
-		   <label>   <input type="checkbox" name="edgesFilter" value="aunt"  />
-		Is <span style="color: red">aunt</span> (тётя) of  </label>
-		   <label>   <input type="checkbox" name="edgesFilter" value="uncle"  />
-		Is <span style="color: red">uncle</span> (дядя) of  </label>   
-	
-	</div>
-
-
-		<div>  <label>   <input type="checkbox" name="edgesFilter" value="husband" checked  />
-		Is <span style="color: red">husband</span> of  </label> 
-		
-		<label>   <input type="checkbox" name="edgesFilter" value="wife"  checked />
-		Is <span style="color: red">wife</span> of  </label>    </div>
-
-
-
-		<div>  <label>   <input type="checkbox" name="edgesFilter" value="father" checked  />
-		Is <span style="color: red">father</span> of  </label>    
-
-	 	  <label> <input type="checkbox" name="edgesFilter" value="mother"  checked />
-		Is <span style="color: red">mother</span> of   </label>    
-
-		  <label>   <input type="checkbox" name="edgesFilter" value="son" checked  />
-		Is <span style="color: red">son</span> of   </label> 
-		
-		<label>   <input type="checkbox" name="edgesFilter" value="daughter"  checked />
-		Is <span style="color: red">daughter</span> of   </label>  </div>
-
-
-
-		<div>    <label>   <input type="checkbox" name="edgesFilter" value="sister"  checked  />
-		Is <span style="color: red">sister</span> of  </label>    
-		
-	    <label>   <input type="checkbox" name="edgesFilter" value="brother" checked  />
-		Is <span style="color: red">brother</span> of  </label>   </div>
-		
-
-
-		
-		<div>    <label>   <input type="checkbox" name="edgesFilter" value="grandmother"  />
-		Is <span style="color: red">grandmother</span> of  </label>   
-		
-	    <label>   <input type="checkbox" name="edgesFilter" value="grandfather"  />
-		Is <span style="color: red">grandfather</span> of  </label>    
-		
-
-
-		   <label>   <input type="checkbox" name="edgesFilter" value="grandson"  />
-		Is <span style="color: red">grandson</span> of  </label>   
-
-		  <label>   <input type="checkbox" name="edgesFilter" value="granddaughter"  />
-		Is <span style="color: red">granddaughter</span> of  </label>   </div>
-
-
-
-
-		<div>    <label>   <input type="checkbox" name="edgesFilter" value="daughter-in-law"  />
-		Is <span style="color: red">daughter-in-law</span> of  </label>    
-		
-		    <label>   <input type="checkbox" name="edgesFilter" value="father-in-law"  />
-		Is <span style="color: red">father-in-law</span> of  </label>  
-		
-		    <label>   <input type="checkbox" name="edgesFilter" value="mother-in-law"  />
-		Is <span style="color: red">mother-in-law</span> of  </label> 
-		
-		<label>   <input type="checkbox" name="edgesFilter" value="sister-in-law"  />
-		Is <span style="color: red">sister-in-law</span> of  </label> 
-	
-	
-	</div>
-
-
-		
- 
-
-
-		<div>  <label>  <input type="checkbox" name="edgesFilter" value="cousin"  />
-		Is <span style="color: green">cousin</span> of  </label>    </div>
-
-
-		<div>  <label>   <input type="checkbox" name="edgesFilter" value="maid"  />
-		Is <span style="color: blue">maid</span> of  </label>   
-
-		  <label>  <input type="checkbox" name="edgesFilter" value="master"  />
-		Is <span style="color: red">master</span> of  </label>  
-
-		  <label>   <input type="checkbox" name="edgesFilter" value="servant"  />
-		Is <span style="color: red">servant</span> of   </label>  </div>
-
-
-
-
-
-		<div>    <label>   <input type="checkbox" name="edgesFilter" value="friend"  />
-		Is <span style="color: red">friend</span> of   </label>    
-		 <label> <input type="checkbox" name="edgesFilter" value="student"  />
-		Is <span style="color: red">student</span> of   </label>
-		<label>   <input type="checkbox" name="edgesFilter" value="relative"  />
-		Is <span style="color: red">relative</span> of  </label>  
-	</div>
-
-	  
-	  
-	  <div>   <label> <input type="checkbox" name="edgesFilter" value="crush"  />
-		Is <span style="color: red">crush</span> of   </label>  
-		<label> <input type="checkbox" name="edgesFilter" value="lover"  />
-		Is <span style="color: red">lover</span> of   </label> 
-
-		<label> <input type="checkbox" name="edgesFilter" value="admirer"  />
-		Is <span style="color: red">admirer</span> of   </label> 
-
-	</div>
-
-	  
- 
-
-	  
-
-
-	  <div>  <label>   <input type="checkbox" name="edgesFilter" value="other"  />
-           Показать все остальные  </label>  </div>  </label>
-
-  </div>
-  <div id="mynetwork"></div>
-
- <script type="text/javascript" src="/compiled.js"></script>
- 
-  <script type="text/javascript">
-  window.onload = function(){
-
-	updateGraph();
-  }
-  function htmlTitle(html) {
-  const container = document.createElement("div");
-  container.innerHTML = html;
-  return container;
-}
-
-function preTitle(text) {
-        const container = document.createElement("pre");
-        container.innerText = text;
-        return container;
-      }
- 
- 
-	const edgesFilterValues = {
-		all: false,
-		other: false,
-		cousin: false,
-		nephew: false,
-		aunt: false,
-		uncle: false,
-		sister: true,
-		brother: true,
-		wife: true,
-		husband: true,
-		son: true,
-		daughter: true,
-		mother: true,
-		father: true,
-		relative: false,
-		"daughter-in-law": false,
-		"father-in-law": false,
-		"mother-in-law": false,
-		"sister-in-law": false,
-		maid: false,
-		servant: false,
-		master: false,
-		admirer: false,
-		crush: false,
-		lover: false,
-		friend: false,
-		grandfather: false,
-		grandmother: false,
-		grandson: false,
-		granddaughter: false,
-		student: false,
-	};
-
-	const edgesFilter = (edge) => {
-		if(edgesFilterValues["all"]){
-			return true;
+	<title>Граф связей персонажей</title>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vis-network@latest/dist/vis-network.min.js"></script>
+	<style type="text/css">
+		#mynetwork {
+			width: 100%;
+			height: 100vh;
+			border: 1px solid lightgray;
 		}
-		if (typeof( edgesFilterValues[edge.label]) == "undefined" ){
-			if(edgesFilterValues["other"]){
+
+		.vis-tooltip {
+			position: absolute;
+			z-index: 1111;
+		}
+
+		pre {
+			background: white;
+			padding: 10px;
+			border: 1px solid black;
+		}
+	</style>
+</head>
+
+<body>
+	<div>
+		<label for="startChapter">Начальная глава:</label>
+		<input type="number" id="startChapter" value="0">
+		<label for="endChapter">Конечная глава:</label>
+		<input type="number" id="endChapter" value="88">
+		<label for="currentChapter">Текущая глава:</label>
+		<input type="number" id="currentChapter" value="22">
+
+		<input type="checkbox" id="withLevels" value="all" />
+		<label for="withLevels">Раскидать по уровням</label>
+		<button onclick="updateGraph()">Обновить граф</button>
+
+
+
+
+		Фильтр
+
+
+		<div>
+			<label>
+				<input type="checkbox" name="edgesFilter" value="all" />
+				Показать все связи
+			</label>
+		</div>
+
+
+
+
+
+
+		<div> <label> <input type="checkbox" name="edgesFilter" value="nephew" />
+				Is <span style="color: red">nephew</span> (племянник) of </label>
+
+
+			<label> <input type="checkbox" name="edgesFilter" value="aunt" />
+				Is <span style="color: red">aunt</span> (тётя) of </label>
+			<label> <input type="checkbox" name="edgesFilter" value="uncle" />
+				Is <span style="color: red">uncle</span> (дядя) of </label>
+
+		</div>
+
+
+		<div> <label> <input type="checkbox" name="edgesFilter" value="husband" checked />
+				Is <span style="color: red">husband</span> of </label>
+
+			<label> <input type="checkbox" name="edgesFilter" value="wife" checked />
+				Is <span style="color: red">wife</span> of </label>
+		</div>
+
+
+
+		<div> <label> <input type="checkbox" name="edgesFilter" value="father" checked />
+				Is <span style="color: red">father</span> of </label>
+
+			<label> <input type="checkbox" name="edgesFilter" value="mother" checked />
+				Is <span style="color: red">mother</span> of </label>
+
+			<label> <input type="checkbox" name="edgesFilter" value="son" checked />
+				Is <span style="color: red">son</span> of </label>
+
+			<label> <input type="checkbox" name="edgesFilter" value="daughter" checked />
+				Is <span style="color: red">daughter</span> of </label>
+		</div>
+
+
+
+		<div> <label> <input type="checkbox" name="edgesFilter" value="sister" checked />
+				Is <span style="color: red">sister</span> of </label>
+
+			<label> <input type="checkbox" name="edgesFilter" value="brother" checked />
+				Is <span style="color: red">brother</span> of </label>
+		</div>
+
+
+
+
+		<div> <label> <input type="checkbox" name="edgesFilter" value="grandmother" />
+				Is <span style="color: red">grandmother</span> of </label>
+
+			<label> <input type="checkbox" name="edgesFilter" value="grandfather" />
+				Is <span style="color: red">grandfather</span> of </label>
+
+
+
+			<label> <input type="checkbox" name="edgesFilter" value="grandson" />
+				Is <span style="color: red">grandson</span> of </label>
+
+			<label> <input type="checkbox" name="edgesFilter" value="granddaughter" />
+				Is <span style="color: red">granddaughter</span> of </label>
+		</div>
+
+
+
+
+		<div> <label> <input type="checkbox" name="edgesFilter" value="daughter-in-law" />
+				Is <span style="color: red">daughter-in-law</span> of </label>
+
+			<label> <input type="checkbox" name="edgesFilter" value="father-in-law" />
+				Is <span style="color: red">father-in-law</span> of </label>
+
+			<label> <input type="checkbox" name="edgesFilter" value="mother-in-law" />
+				Is <span style="color: red">mother-in-law</span> of </label>
+
+			<label> <input type="checkbox" name="edgesFilter" value="sister-in-law" />
+				Is <span style="color: red">sister-in-law</span> of </label>
+
+
+		</div>
+
+
+
+
+
+
+		<div> <label> <input type="checkbox" name="edgesFilter" value="cousin" />
+				Is <span style="color: green">cousin</span> of </label> </div>
+
+
+		<div> <label> <input type="checkbox" name="edgesFilter" value="maid" />
+				Is <span style="color: blue">maid</span> of </label>
+
+			<label> <input type="checkbox" name="edgesFilter" value="master" />
+				Is <span style="color: red">master</span> of </label>
+
+			<label> <input type="checkbox" name="edgesFilter" value="servant" />
+				Is <span style="color: red">servant</span> of </label>
+		</div>
+
+
+
+
+
+		<div> <label> <input type="checkbox" name="edgesFilter" value="friend" />
+				Is <span style="color: red">friend</span> of </label>
+			<label> <input type="checkbox" name="edgesFilter" value="student" />
+				Is <span style="color: red">student</span> of </label>
+			<label> <input type="checkbox" name="edgesFilter" value="relative" />
+				Is <span style="color: red">relative</span> of </label>
+		</div>
+
+
+
+		<div> <label> <input type="checkbox" name="edgesFilter" value="crush" />
+				Is <span style="color: red">crush</span> of </label>
+			<label> <input type="checkbox" name="edgesFilter" value="lover" />
+				Is <span style="color: red">lover</span> of </label>
+
+			<label> <input type="checkbox" name="edgesFilter" value="admirer" />
+				Is <span style="color: red">admirer</span> of </label>
+
+		</div>
+
+
+
+
+
+
+
+		<div> <label> <input type="checkbox" name="edgesFilter" value="other" />
+				Показать все остальные </label> </div> </label>
+
+	</div>
+	<div id="mynetwork"></div>
+
+	<script type="text/javascript" src="/compiled.js"></script>
+
+	<script type="text/javascript">
+		window.onload = function() {
+
+			updateGraph();
+		}
+
+		function htmlTitle(html) {
+			const container = document.createElement("div");
+			container.innerHTML = html;
+			return container;
+		}
+
+		function preTitle(text) {
+			const container = document.createElement("pre");
+			container.innerText = text;
+			return container;
+		}
+
+
+		const edgesFilterValues = {
+			all: false,
+			other: false,
+			cousin: false,
+			nephew: false,
+			aunt: false,
+			uncle: false,
+			sister: true,
+			brother: true,
+			wife: true,
+			husband: true,
+			son: true,
+			daughter: true,
+			mother: true,
+			father: true,
+			relative: false,
+			"daughter-in-law": false,
+			"father-in-law": false,
+			"mother-in-law": false,
+			"sister-in-law": false,
+			maid: false,
+			servant: false,
+			master: false,
+			admirer: false,
+			crush: false,
+			lover: false,
+			friend: false,
+			grandfather: false,
+			grandmother: false,
+			grandson: false,
+			granddaughter: false,
+			student: false,
+		};
+
+		const edgesFilter = (edge) => {
+			if (edgesFilterValues["all"]) {
 				return true;
 			}
-		}
-
-		return edgesFilterValues[edge.label];
-
-		
-	};
-	
-	const edgeFilters = document.getElementsByName("edgesFilter");
-
-	
-	edgeFilters.forEach((filter) =>
-        filter.addEventListener("change", (e) => {
-          const { value, checked } = e.target;
-          edgesFilterValues[value] = checked;
-          edgesView.refresh();
-        })
-      );
-
-
-    var nodes = new vis.DataSet();
-    var edges = new vis.DataSet();
-
-	  const edgesView = new vis.DataView(edges, { filter: edgesFilter });
-    var container = document.getElementById('mynetwork');
-    var data = {
-      nodes: nodes,
-      edges: edgesView,
-	  
-	  options: {
-	  interaction:{
-	 
-			hover: true
-			 
-		  }
-		}
-    };
-    var options = {};
-    var network = new vis.Network(container, data, options);
-
-    function updateGraph() {
-      var startChapter = parseInt(document.getElementById('startChapter').value);
-      var endChapter = parseInt(document.getElementById('endChapter').value);
-      var currentChapter = parseInt(document.getElementById('currentChapter').value);
-
-      nodes.clear();
-      edges.clear();
-
-      var characterMap = {};
-      var relationMap = {};
-      var allChapterCharacters = new Set();
-      var currentChapterCharacters = new Set();
-      var currentChapterCharactersActions = {};
-      var connectionsChapters = {};
-	  
-	  var allCharactersActions = {};
-	  
-	 window.connections.forEach(function(connection) {
-	  if (connection.chapter >= startChapter && connection.chapter <= endChapter) {
-		  
-		
-		connection.characters.forEach(function(character) {
-			
-		   if(!allCharactersActions[character.name]){
-			   allCharactersActions[character.name] = "";
-		   }
-		   allCharactersActions[character.name] = allCharactersActions[character.name] + connection.chapter + ": "+character.actions + "\n"
-		   
-		   
-		  if (!characterMap[character.name]) {
-			characterMap[character.name] = {
-			  id: character.name,
-			  label: character.name,
-			//  title: 'sd',//character.description,
-			  color: '#DCDCDC'
-			};
-			nodes.add(characterMap[character.name]);
-		  }
-
-		  if (connection.chapter === currentChapter) {
-			currentChapterCharacters.add(character.name);
-			currentChapterCharactersActions[character.name] = character.description + "\n" + character.actions
-		  }else{
-			allChapterCharacters.add(character.name);
-			allChapterCharacters[character.name] = character.description  
-
-		  }
-		if(character.relations) {
-		  Object.keys(character.relations).forEach(function(relation) {
-			var relatedCharacters = character.relations[relation];
-			if (!Array.isArray(relatedCharacters)) {
-			  relatedCharacters = [relatedCharacters];
+			if (typeof(edgesFilterValues[edge.label]) == "undefined") {
+				if (edgesFilterValues["other"]) {
+					return true;
+				}
 			}
-			relatedCharacters.forEach(function(relatedCharacter) {
 
-				
+			return edgesFilterValues[edge.label];
 
-			  if (!characterMap[relatedCharacter]) {
-				characterMap[relatedCharacter] = {
-				  id: relatedCharacter,
-				  label: relatedCharacter,
-				//   title: 's',
-				  color: '#DCDCDC'
-				};
-				nodes.add(characterMap[relatedCharacter]);
-			  }
-			  var edgeId = character.name + '-' + relatedCharacter;
 
-			  if(!connectionsChapters[edgeId]){
-				connectionsChapters[edgeId]="Главы, в которых упоминается связь: "
-			  }
-			  connectionsChapters[edgeId] = connectionsChapters[edgeId] + connection.chapter + ", "
-			  if (!relationMap[edgeId]) {
-				relationMap[edgeId] = {
-				  from: character.name,
-				  to: relatedCharacter,
-				  label: relation,
-				  
-				  arrows: "to"
-				};
+		};
 
-				for(key in window.truth_connections.characters){
-					name = window.truth_connections.characters[key].name
-					if (name==character.name) {
-					
-						if(typeof(window.truth_connections.characters[key].relations[relation]) !== 'undefined'){
-							if ( window.truth_connections.characters[key].relations[relation].indexOf(  relatedCharacter)!=-1) {
-								relationMap[edgeId].color = '#00aa00'
-								relationMap[edgeId].approved = true
-							}
+		const edgeFilters = document.getElementsByName("edgesFilter");
+
+
+		edgeFilters.forEach((filter) =>
+			filter.addEventListener("change", (e) => {
+				const {
+					value,
+					checked
+				} = e.target;
+				edgesFilterValues[value] = checked;
+				edgesView.refresh();
+			})
+		);
+
+
+		var nodes = new vis.DataSet();
+		var edges = new vis.DataSet();
+
+		const edgesView = new vis.DataView(edges, {
+			filter: edgesFilter
+		});
+		var container = document.getElementById('mynetwork');
+		var data = {
+			nodes: nodes,
+			edges: edgesView,
+
+			options: {
+				interaction: {
+
+					hover: true
+
+				}
+			}
+		};
+		var options = {};
+
+		 
+		var network = new vis.Network(container, data, options);
+
+		function updateGraph() {
+			var startChapter = parseInt(document.getElementById('startChapter').value);
+			var endChapter = parseInt(document.getElementById('endChapter').value);
+			var currentChapter = parseInt(document.getElementById('currentChapter').value);
+			var isWithLevels = document.getElementById('withLevels').checked;
+
+ 
+			if (isWithLevels) {
+				network.setOptions({
+					layout: {
+						hierarchical: {
+							direction: "UD",
+							sortMethod: "directed"
 						}
 					}
-				}
+				});
+			}else{
+				network.setOptions({
+					"layout":{}
+				});
+			}
+ 
 
-				edges.add(relationMap[edgeId]);
-			  }
+			nodes.clear();
+			edges.clear();
+
+			var characterMap = {};
+			var relationMap = {};
+			var allChapterCharacters = new Set();
+			var currentChapterCharacters = new Set();
+			var currentChapterCharactersActions = {};
+			var connectionsChapters = {};
+
+			var allCharactersActions = {};
+
+			window.connections.forEach(function(connection) {
+				if (connection.chapter >= startChapter && connection.chapter <= endChapter) {
+
+
+					connection.characters.forEach(function(character) {
+
+						if (!allCharactersActions[character.name]) {
+							allCharactersActions[character.name] = "";
+						}
+						allCharactersActions[character.name] = allCharactersActions[character.name] + connection.chapter + ": " + character.actions + "\n"
+
+						if (!isWithLevels || "undefined" != typeof(window.levels[character.name])) {
+
+							if (!characterMap[character.name]) {
+								characterMap[character.name] = {
+									id: character.name,
+									label: character.name,
+									//  title: 'sd',//character.description,
+									color: '#DCDCDC'
+								};
+								if (isWithLevels) {
+									characterMap[character.name].level = window.levels[character.name]
+								}
+								nodes.add(characterMap[character.name]);
+							}
+						}
+						if (connection.chapter === currentChapter) {
+							currentChapterCharacters.add(character.name);
+							currentChapterCharactersActions[character.name] = character.description + "\n" + character.actions
+						} else {
+							allChapterCharacters.add(character.name);
+							allChapterCharacters[character.name] = character.description
+
+						}
+						if (character.relations) {
+							Object.keys(character.relations).forEach(function(relation) {
+								var relatedCharacters = character.relations[relation];
+								if (!Array.isArray(relatedCharacters)) {
+									relatedCharacters = [relatedCharacters];
+								}
+								relatedCharacters.forEach(function(relatedCharacter) {
+
+
+									if (!isWithLevels || "undefined" != typeof(window.levels[relatedCharacter])) {
+										if (!characterMap[relatedCharacter]) {
+											characterMap[relatedCharacter] = {
+												id: relatedCharacter,
+												label: relatedCharacter,
+												//   title: 's',
+												color: '#DCDCDC'
+											};
+
+											if (isWithLevels) {
+												characterMap[relatedCharacter].level = window.levels[relatedCharacter]
+											}
+											nodes.add(characterMap[relatedCharacter]);
+										}
+									}
+									var edgeId = character.name + '-' + relatedCharacter;
+
+									if (!connectionsChapters[edgeId]) {
+										connectionsChapters[edgeId] = "Главы, в которых упоминается связь: "
+									}
+									connectionsChapters[edgeId] = connectionsChapters[edgeId] + connection.chapter + ", "
+									if (!isWithLevels || ("undefined" != typeof(window.levels[character.name]) && "undefined" != typeof(window.levels[relatedCharacter]))) {
+										if (!relationMap[edgeId]) {
+											relationMap[edgeId] = {
+												from: character.name,
+												to: relatedCharacter,
+												label: relation,
+
+												arrows: "to"
+											};
+
+											for (key in window.truth_connections.characters) {
+												name = window.truth_connections.characters[key].name
+												if (name == character.name) {
+
+													if (typeof(window.truth_connections.characters[key].relations[relation]) !== 'undefined') {
+														if (window.truth_connections.characters[key].relations[relation].indexOf(relatedCharacter) != -1) {
+															relationMap[edgeId].color = '#00aa00'
+															relationMap[edgeId].approved = true
+														}
+													}
+												}
+											}
+
+											edges.add(relationMap[edgeId]);
+										}
+									}
+								});
+							});
+
+						}
+					});
+				}
 			});
-		  });
-		  
+			allChapterCharacters.forEach(function(characterName) {
+				if (!isWithLevels || ("undefined" != typeof(window.levels[characterName])) ) {
+
+
+					// characterMap[characterName].color = '#97C2FC';
+					characterMap[characterName].title = preTitle(characterName + "\n" + allChapterCharacters[characterName] + "\n" + allCharactersActions[characterName]);
+					//     characterMap[characterName].title =   preTitle("ASCII\n    art") ;
+					nodes.update(characterMap[characterName]);
+				}
+			});
+
+
+			currentChapterCharacters.forEach(function(characterName) {
+				if (!isWithLevels || ("undefined" != typeof(window.levels[characterName])) ) {
+					characterMap[characterName].color = '#97C2FC';
+					characterMap[characterName].title = preTitle(characterName + "\n" + currentChapterCharactersActions[characterName] + "\n" + allCharactersActions[characterName]);
+					//     characterMap[characterName].title =   preTitle("ASCII\n    art") ;
+					nodes.update(characterMap[characterName]);
+				}
+			});
+
+			for (edgeId in relationMap) {
+				relationMap[edgeId].title = preTitle(connectionsChapters[edgeId])
+				if (relationMap[edgeId].approved) {
+					relationMap[edgeId].title = preTitle("Проверенная связь\n" + connectionsChapters[edgeId])
+				}
+				edges.update(relationMap[edgeId]);
+			}
+
+
 		}
-		});
-	  }
-	});
-      allChapterCharacters.forEach(function(characterName) {
-       // characterMap[characterName].color = '#97C2FC';
-        characterMap[characterName].title =    preTitle(characterName + "\n" + allChapterCharacters[characterName] + "\n"+allCharactersActions[characterName] );
-   //     characterMap[characterName].title =   preTitle("ASCII\n    art") ;
-        nodes.update(characterMap[characterName]);
-      });
-	  
-	  
-	    currentChapterCharacters.forEach(function(characterName) {
-        characterMap[characterName].color = '#97C2FC';
-        characterMap[characterName].title =    preTitle(characterName + "\n" + currentChapterCharactersActions[characterName] + "\n"+allCharactersActions[characterName] );
-   //     characterMap[characterName].title =   preTitle("ASCII\n    art") ;
-        nodes.update(characterMap[characterName]);
-      });
-	   
-	  for(edgeId in relationMap){
-		relationMap[edgeId].title=  preTitle(connectionsChapters[edgeId])
-		if(relationMap[edgeId].approved){
-			relationMap[edgeId].title=  preTitle("Проверенная связь\n"+connectionsChapters[edgeId])
-		}
-		edges.update(relationMap[edgeId]);
-      }
-	  
-	  
-    }
-  </script>
+	</script>
 </body>
+
 </html>

@@ -111,7 +111,61 @@ foreach($data as $chapter){
 }
 
 
+$levels = [];
+$levels["Цзя Юань (Жунго-Гун)"] = 0;
+$levels["Цзя Янь (Нинго-Гун)"] = 0;
+
+$levelRules = [
+
+    "brother"=>0,
+    "sister"=>0,
+    "son"=>1,
+    "daughter"=>1,
+    "mother"=>-1,
+    "father"=>-1,
+    "wife"=>0,
+    "husband"=>0,
+];
+
+$anotherTry = true;
+while($anotherTry){
+    $anotherTry = false;
+    foreach($newData as $key=>$chapter){
+        foreach($chapter["characters"] as $character){
+            $name = $character["name"];
+            foreach($character["relations"] as $relationType => $relation){
+                if(!is_array($relation)){
+                    $relation = [$relation];
+                }
+                foreach ($relation as $targetName){
+
+                    //Добавляем основного персонажа в базу
+                    if(!isset($levels[$name])){
+                        if(isset($levels[$targetName])) {
+                            if(isset($levelRules[$relationType])){
+                                $levels[$name] = $levels[$targetName] - $levelRules[$relationType];
+                                $anotherTry = true;
+                            }
+                        }
+                    }
+                    
+                    //Добавляем второстепенного персонажа в базу
+                    if(!isset($levels[$targetName])){
+                        if(isset($levels[$name])) {
+                            if(isset($levelRules[$relationType])){
+                                $levels[$targetName] = $levels[$name] + $levelRules[$relationType];
+                                $anotherTry = true;
+                            }
+                        }
+                    }             
+                }
+                
+            }
+        }
+    }
+}
 file_put_contents('compiled.js', 
     'window.connections = ' .  json_encode($newData, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE) . ";\n".
-    'window.truth_connections = ' .  json_encode($truth, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE) . ";\n"
+    'window.truth_connections = ' .  json_encode($truth, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE) . ";\n".
+    'window.levels = ' .  json_encode($levels, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE) . ";\n"
 );
