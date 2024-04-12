@@ -309,19 +309,43 @@
 				network.setOptions({
 					layout: {
 						hierarchical: {
-							direction: "UD",
-							sortMethod: "directed"
-						}
-					}, physics: {
-						enabled: false
-					}
+							direction: 'DU'
+							/*,
+							sortMethod: "directed"*/
+						},
+						
+						
+					},  edges: {
+						chosen: false,
+						font: {
+							multi: "html",
+							align: 'top',
+							color: "#79553D"
+						},
+						smooth: {
+							type: 'cubicBezier',
+							forceDirection: 'vertical',
+							roundness: 1
+						},
+						color: {
+							color: "#79553D"
+						},
+					},
+					nodes: {
+						widthConstraint: {
+							minimum: 80,
+							maximum: 95,
+						},
+						shape: "box",
+						font: {
+							multi: "html",
+						},
+						labelHighlightBold: false,
+					},
 				});
 			}else{
 				network.setOptions({
-					"layout":{},
-					 physics: {
-						enabled: true
-					}
+					"layout":{} 
 				});
 			}
  
