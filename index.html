@@ -312,11 +312,16 @@
 							direction: "UD",
 							sortMethod: "directed"
 						}
+					}, physics: {
+						enabled: false
 					}
 				});
 			}else{
 				network.setOptions({
-					"layout":{}
+					"layout":{},
+					 physics: {
+						enabled: true
+					}
 				});
 			}
  
